@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tobams Group — Training & Development Page
 
-## Getting Started
+## Live URL
+🔗 **[https://tobams.vercel.app](https://tobams.vercel.app)** *(update after deployment)*
 
-First, run the development server:
+---
+
+## Setup Instructions
 
 ```bash
+# 1. Clone the repository
+git clone https://github.com/<your-username>/tobams.git
+cd tobams
+
+# 2. Install dependencies
+npm install
+
+# 3. Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tech Stack
 
-## Learn More
+- **Next.js 16** (App Router)
+- **Tailwind CSS v4**
+- **TypeScript**
+- **next/image** for optimized images
+- **next/font** (Inter) for optimized font loading
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+src/
+├── app/
+│   ├── globals.css       # Tailwind imports + CSS custom properties
+│   ├── layout.tsx        # Root layout with Inter font + metadata
+│   └── page.tsx          # Page composition
+└── components/
+    ├── Navbar.tsx
+    ├── Hero.tsx
+    ├── LearningManagementSystem.tsx
+    ├── CorporateTrainings.tsx
+    ├── PersonalisedTraining.tsx
+    ├── CapacityDevelopment.tsx
+    ├── ManagementDevelopmentProgram.tsx
+    ├── TransformationHub.tsx
+    ├── TrainTheConsultant.tsx
+    ├── Testimonials.tsx
+    ├── BoltListItem.tsx
+    └── Footer.tsx
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Design Decisions & Technical Assumptions
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Tailwind CSS v4 only** — no other CSS frameworks used. All styling via utility classes.
+- **Responsive prefixes** (`sm:`, `lg:`) used exclusively — no custom `@media` queries. Tailwind's built-in breakpoints (`sm: 640px`, `lg: 1024px`) map cleanly to the required 425px / 768px / 1280px targets.
+- **CSS custom properties** defined in `globals.css` under `@theme inline` for Tailwind v4 compatibility, exposing brand colors (`--color-primary`, `--color-accent`, etc.) as Tailwind utilities.
+- **Inter font** loaded via `next/font/google` — chosen as the closest match to the clean sans-serif in the design spec.
+- **All images** served from `public/img/` via `next/image` with `fill` layout for responsive containers and meaningful `alt` text on every image.
+- **Circular image** in the LMS section achieved with `rounded-full overflow-hidden` on a fixed-size wrapper.
+- **Gold border frame** in the Management Development Program section uses `border-2 border-[#c9a84c]` on a rounded container.
+- **Sticky navbar** uses `sticky top-0 z-50` — no JavaScript scroll listeners needed.
+- **AI assistance disclosure**: This project was built with AI assistance (Amazon Q Developer). All code has been reviewed and understood.
+
+---
+
+## Deployment
+
+Deployed to **Vercel**. To deploy your own instance:
+
+```bash
+npm run build   # verify build passes locally first
+```
+
+Then connect the GitHub repo to [vercel.com](https://vercel.com) and deploy.
