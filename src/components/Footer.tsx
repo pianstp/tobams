@@ -42,11 +42,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="flex flex-col gap-4">
             <Image
-              src="/img/tobams-logo.png"
+              src="/img/footer-logo.png"
               alt="Tobams Group logo"
               width={140}
               height={40}
-              className="h-10 w-auto object-contain brightness-0 invert"
+              className="h-10 w-auto object-contain"
             />
             <p className="text-gray-400 text-sm leading-relaxed">
               Tobams Group is an innovative consultancy firm reshaping the future of tech talent development in Africa, specializing in talent acquisition, internships, and skill development with a global perspective.
@@ -121,24 +121,23 @@ export default function Footer() {
         </div>
 
         {/* Info card */}
-        <div className="mt-12 bg-white/5 rounded-2xl p-6 sm:p-8 grid grid-cols-1 sm:grid-cols-2 gap-8">
-          {/* Registered Offices */}
+        <div className="mt-12 bg-white/5 rounded-2xl p-6 sm:p-8 grid grid-cols-1 sm:grid-cols-3 gap-8">
+          {/* UK Office */}
           <div>
             <h4 className="font-bold text-white text-sm mb-4">Registered Offices</h4>
-            <div className="flex flex-col gap-4">
-              <div>
-                <p className="text-[#e8533a] text-xs font-semibold mb-1">United Kingdom</p>
-                <p className="text-gray-400 text-xs leading-relaxed">
-                  07451196 (Registered by Company House), Vine Cottages, 215 North Street, Romford, Essex, United Kingdom, RM1 4QA
-                </p>
-              </div>
-              <div>
-                <p className="text-[#e8533a] text-xs font-semibold mb-1">Nigeria</p>
-                <p className="text-gray-400 text-xs leading-relaxed">
-                  RC 1048722 (Registered by the Corporate Affairs Commission), 4, Muaz Close, Angwar-Rimi
-                </p>
-              </div>
-            </div>
+            <p className="text-[#e8533a] text-xs font-semibold mb-1">United Kingdom</p>
+            <p className="text-gray-400 text-xs leading-relaxed">
+              07451196 (Registered by Company House), Vine Cottages, 215 North Street, Romford, Essex, United Kingdom, RM1 4QA
+            </p>
+          </div>
+
+          {/* Nigeria Office */}
+          <div>
+            <h4 className="font-bold text-white text-sm mb-4 invisible">Registered Offices</h4>
+            <p className="text-[#e8533a] text-xs font-semibold mb-1">Nigeria</p>
+            <p className="text-gray-400 text-xs leading-relaxed">
+              RC 1048722 (Registered by the Corporate Affairs Commission), 4, Muaz Close, Angwar-Rimi
+            </p>
           </div>
 
           {/* Contact Information */}

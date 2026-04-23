@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-[45vh] min-h-[320px] flex items-center justify-center overflow-hidden">
+    <section className="relative w-full h-[calc(60vh+20px)] min-h-[420px] flex items-center justify-center overflow-hidden">
       <Image
         src="/img/hero_background_cover.jpg"
         alt="Professional working at a tech screen"
@@ -11,7 +11,7 @@ export default function Hero() {
         priority
       />
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/70" />
+      <div className="absolute inset-0 bg-black/60" />
 
       <div className="relative z-10 flex flex-col items-center text-center px-4 max-w-2xl mx-auto gap-4">
         <span className="bg-black/60 text-white text-xs font-medium px-5 py-1.5 rounded-full tracking-widest uppercase">

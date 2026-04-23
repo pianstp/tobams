@@ -1,14 +1,5 @@
 import Image from "next/image";
 
-const courses = [
-  "Business Analysis",
-  "Design Thinking",
-  "Effective Communication",
-  "Entrepreneurship",
-  "Career Development",
-  "Business Model",
-];
-
 export default function LearningManagementSystem() {
   return (
     <section className="bg-[#ede3f0] py-16 lg:py-24">
@@ -36,11 +27,15 @@ export default function LearningManagementSystem() {
             <p className="font-bold text-[#4a0e3f] mb-3 text-sm sm:text-base">
               Some of our courses include:
             </p>
-            <ul className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-2">
-              {courses.map((course) => (
-                <li key={course} className="flex items-start gap-1.5 text-sm text-gray-700">
-                  <span className="text-[#4a0e3f] mt-0.5">•</span>
-                  {course}
+            <ul className="flex flex-col gap-1.5">
+              {[["Business Analysis", "Design Thinking", "Effective Communication"], ["Entrepreneurship", "Career Development", "Business Model"]].map((row, i) => (
+                <li key={i} className="flex flex-wrap gap-x-4 gap-y-1">
+                  {row.map((course) => (
+                    <span key={course} className="flex items-center gap-1 text-sm text-gray-700">
+                      <span className="w-1.5 h-1.5 rounded-full bg-gray-600 shrink-0" />
+                      {course}
+                    </span>
+                  ))}
                 </li>
               ))}
             </ul>

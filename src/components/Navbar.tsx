@@ -68,17 +68,17 @@ export default function Navbar() {
       </div>
 
       {/* Row 2: Nav links only — desktop */}
-      <nav aria-label="Main navigation" className="hidden lg:block border-b border-gray-200">
-        <ul className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-6 h-10 text-sm text-gray-700">
+      <nav aria-label="Main navigation" className="hidden lg:block border-t border-gray-200 border-b border-gray-200">
+        <ul className="w-full px-4 sm:px-6 lg:px-8 flex justify-center items-center gap-6 text-sm text-gray-700">
           {navLinks.map((link) => (
-            <li key={link.label}>
+            <li
+              key={link.label}
+              className="flex items-center py-3"
+              style={{ borderBottom: link.active ? "2px solid #3b0a35" : "2px solid transparent" }}
+            >
               <Link
                 href={link.href}
-                className={`flex items-center gap-0.5 whitespace-nowrap pb-0.5 transition-colors hover:text-[#4a0e3f] ${
-                  link.active
-                    ? "text-gray-800 border-b-2 border-[#4a0e3f]"
-                    : "border-b-2 border-transparent hover:border-[#4a0e3f]"
-                }`}
+                className="flex items-center gap-0.5 whitespace-nowrap transition-colors hover:text-[#4a0e3f]"
               >
                 {link.label}
                 {link.dropdown && (
